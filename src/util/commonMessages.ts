@@ -1,4 +1,6 @@
 import { Guild, MessageOptions } from 'discord.js';
+import { eventNames } from 'process';
+import { Event } from './diablo';
 
 const buildDiaryMessageReminder = (guild: Guild): MessageOptions => ({
   content: '@everyone',
@@ -10,11 +12,15 @@ const buildDiaryMessageReminder = (guild: Guild): MessageOptions => ({
         icon_url: guild.iconURL() ?? undefined
       },
       title: 'BOM DIA BRAZUKAS - LEMBRETE DE ATIVIDADES DIÁRIAS',
+      thumbnail: {
+        url:
+          'https://static-cdn.jtvnw.net/ttv-boxart/Diablo%20Immortal.jpg' ?? ''
+      },
       fields: [
         {
           name: 'Diárias comuns',
           value:
-            '```- Caçadas\n- Legado de Horadritti\n- Quests Secundárias (3)```'
+            '```- Caçadas\n- Legado de Horadrim\n- Quests Secundárias (3)```'
         },
         {
           name: 'Diárias das sombras',
@@ -30,6 +36,33 @@ const buildDiaryMessageReminder = (guild: Guild): MessageOptions => ({
   ]
 });
 
+const buildEventReminderMessage = (
+  event: Event,
+  guild: Guild
+): MessageOptions => ({
+  content: '@everyone',
+  embeds: [
+    {
+      color: '#ebc934',
+      author: {
+        name: event.title ?? '',
+        icon_url: guild.iconURL() ?? undefined
+      },
+      title: `O(a) ${event.title} vai começar em 10 minutos!`,
+      thumbnail: {
+        url: event.thumbnail ?? ''
+      },
+      image: {
+        url: event.imageURL ?? ''
+      },
+      footer: {
+        text: event.location ?? ''
+      }
+    }
+  ]
+});
+
 export default {
-  buildDiaryMessageReminder
+  buildDiaryMessageReminder,
+  buildEventReminderMessage
 };

@@ -4,6 +4,7 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
+    "dev-reminder": "nodemon ./src/services/reminder.ts --watch 'src/' -e ts",
     "dev": "nodemon ./src/app.ts --watch 'src/' -e ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
@@ -16,6 +17,7 @@
     "discord-api-types": "^0.34.0",
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1",
+    "moment": "^2.29.3",
     "node-cron": "^3.0.1"
   },
   "devDependencies": {
