@@ -21,6 +21,7 @@ async function startApp() {
 
   // '0 3 * * *' 3 HORAS DA MANHA
   // '*/10 * * * * *' 10  segundos para teste
+  // '*/10  * * * *' 10 Minutos
 
   const diaryJob = new CronJob(
     '0 3 * * *',
@@ -51,7 +52,7 @@ async function startApp() {
       });
     },
     () => {},
-    false,
+    true,
     constants.timezone
   );
 

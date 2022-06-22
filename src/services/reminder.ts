@@ -22,13 +22,11 @@ export const remindIfNecessary = () => {
       }
 
       event.times.forEach((time) => {
-        const dayToSet = event.days?.find((day) => day === currentDay);
-
         const dateFromTime = moment().set({ day: currentDay, ...time });
 
         const diff = dateFromTime.diff(currentDate);
 
-        const shouldRemind = diff <= 600000 && diff > 0; //10 minutos
+        const shouldRemind = diff < 700000 && diff > 500000; // +/- 10 minutos
 
         if (shouldRemind) {
           reminders.push(event);

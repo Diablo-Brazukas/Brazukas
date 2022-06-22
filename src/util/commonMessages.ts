@@ -20,7 +20,7 @@ const buildDiaryMessageReminder = (guild: Guild): MessageOptions => ({
         {
           name: 'Diárias comuns',
           value:
-            '```- Caçadas\n- Legado de Horadrim\n- Quests Secundárias (3)```'
+            '```- Caçadas (8+)\n- Legado de Horadrim\n- Quests Secundárias (3)```'
         },
         {
           name: 'Diárias das sombras',
@@ -31,7 +31,8 @@ const buildDiaryMessageReminder = (guild: Guild): MessageOptions => ({
           name: 'Códice',
           value: '```- Bestiário (3)```'
         }
-      ]
+      ],
+      timestamp: new Date()
     }
   ]
 });
@@ -48,14 +49,20 @@ const buildEventReminderMessage = (
         name: event.title ?? '',
         icon_url: guild.iconURL() ?? undefined
       },
-      title: `O(a) ${event.title} vai começar em 10 minutos!`,
+      description: `**__${event.title}__** vai ${
+        event.location ? 'spawnar' : 'começar'
+      } em 10 minutos! ${
+        event.location ? 'em: **__' + event.location + '__**' : ''
+      }`,
       thumbnail: {
         url: event.thumbnail ?? ''
       },
       image: {
         url: event.imageURL ?? ''
       },
+      timestamp: new Date(),
       footer: {
+        icon_url: event.thumbnail ?? '',
         text: event.location ?? ''
       }
     }

@@ -47,6 +47,13 @@ export const EVENTS_TIME: Readonly<Record<EventKey, Event[]>> = Object.freeze({
       ],
       thumbnail:
         'https://static.wixstatic.com/media/96c242_486a29d46a7b49289a5f25166b0432cf~mv2.jpg/v1/fill/w_148,h_148,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Screenshot_49.jpg'
+    },
+    {
+      title: 'Rito do Exílio',
+      days: [0],
+      times: [{ hour: 20, minute: 0 }],
+      thumbnail:
+        'https://static.wixstatic.com/media/96c242_1747ba97b034463a8dca6f158abdaca4~mv2.jpg/v1/fill/w_148,h_148,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Screenshot_49.jpg'
     }
   ],
   worldBosses: [
@@ -56,7 +63,7 @@ export const EVENTS_TIME: Readonly<Record<EventKey, Event[]>> = Object.freeze({
       days: [0, 2, 6],
       times: [{ hour: 21, minute: 30 }],
       imageURL:
-        'https://static.wixstatic.com/media/96c242_ff2be640faeb4dfbaefab839d021c865~mv2.jpg/v1/fill/w_148,h_148,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Screenshot_49.jpg',
+        'https://static.wixstatic.com/media/96c242_a84bf71b02844248a1d8cfa10c89fef7~mv2.jpg/v1/fill/w_451,h_216,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Ancient_Nightmare.jpg',
       thumbnail:
         'https://static.wixstatic.com/media/96c242_abf8453d5edc41cf8b28934dbf45ebea~mv2.jpg/v1/fill/w_148,h_148,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Screenshot_49.jpg'
     },
